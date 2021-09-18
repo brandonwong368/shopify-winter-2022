@@ -19,7 +19,11 @@ image_collection = db["images"]
 def index():
     return "Hello, World!"
 
+# TODO: add validation of request bodies
+# add error handling
+
 # insert a document into the database
+# pass in JSON body with document details
 @app.route('/add' , methods=["POST"])
 def add():
     body = request.get_json(force=True)
@@ -27,6 +31,7 @@ def add():
 
     return "Document uploaded successfully"
 
+# delete a document into the database matching JSON body
 @app.route("/delete" , methods = ["DELETE"])
 def delete():
     body = request.get_json(force=True)
@@ -34,6 +39,7 @@ def delete():
 
     return "Document deleted successfully"
 
+# return a document matching JSON body
 @app.route("/search", methods = ["GET"])
 def search():
     body = request.get_json(force=True)
