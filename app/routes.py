@@ -22,8 +22,6 @@ stripe_keys = {
 }
 stripe.api_key = stripe_keys["secret_key"]
 
-# TODO: add validation/error handling of request bodies
-
 # insert a document into the database
 # pass in JSON body with document details
 @app.route("/add", methods=["POST"])
