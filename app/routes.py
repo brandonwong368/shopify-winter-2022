@@ -46,6 +46,7 @@ def add():
             image_collection.insert_one(body)
             return "New image created successfully!"
 
+
 # delete a document into the database matching JSON body
 @app.route("/delete", methods=["DELETE"])
 def delete():
@@ -57,6 +58,7 @@ def delete():
         image_collection.delete_one(body)
         return "Image deleted successfully!"
 
+
 # return a document matching JSON body
 @app.route("/search", methods=["GET"])
 def search():
@@ -66,6 +68,7 @@ def search():
         return "Image does not exist!"
     else:
         return json.loads(json_util.dumps(document))
+
 
 @app.route("/buy", methods=["POST"])
 def buy():
@@ -85,6 +88,7 @@ def buy():
             return "Image is not in stock!"
     else:
         return "Image does not exist in repository"
+
 
 # confirm that the transaction was completed
 @app.route("/confirm", methods=["POST"])

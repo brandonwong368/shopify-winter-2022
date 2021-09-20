@@ -3,7 +3,7 @@ def validateAdd(body):
     if "link" not in body:
         error.append("Image link missing")
     if "cost" not in body:
-        error.append("Cost missing" )
+        error.append("Cost missing")
     else:
         try:
             val = int(body["cost"])
@@ -12,6 +12,3 @@ def validateAdd(body):
         except ValueError:
             error.append("Cost must be an integer in cents")
     return ", ".join(error)
-    
-
-    
