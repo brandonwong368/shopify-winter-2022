@@ -10,7 +10,7 @@ import app.validate as validate
 
 # connect to MongoDB
 load_dotenv()
-API_KEY = os.getenv("API_KEY")
+API_KEY = os.getenv("MONGO_API_KEY")
 cluster = MongoClient(API_KEY)
 db = cluster["images"]
 image_collection = db["images"]
